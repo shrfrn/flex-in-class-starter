@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/axis.css">
+    <link rel="stylesheet" href="css/flexbox.css">
+    <title>Flexbox</title>
+</head>
+
+<body onload="setAxis()">
+    
+    <h1>flexbox</h1>
+    <div class="flex-container">
+
+        <div class="flex-item item1">1</div>
+        <div class="flex-item item2">2</div>
+        <div class="flex-item item3">3</div>
+        
+        <div class="axis main-axis"></div>
+        <div class="axis cross-axis"></div>
+
+    </div>
+
+    <script>
+        function setAxis(){
+            const elFlexbox = document.querySelector('.flex-container')
+            style = getComputedStyle(elFlexbox)
+            
+            if(style.display !== 'flex'){
+                const elAxes = document.querySelectorAll('.axis')
+                elAxes.forEach(el => el.classList.add('hidden'))
+            } else if(style.flexDirection === 'column'){
+                const elBody = document.querySelector('body')
+                elBody.classList.add('flex-column')
+            }
+        }
+    </script>
+</body>
+</html>
