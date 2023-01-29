@@ -11,14 +11,6 @@ body {
     color: #777;
 }
 .card {
-    /* display: flex; */
-    /* gap: 10px; */
-
-    /* justify-content: end; */
-    /* align-items: end; */
-    
-    /* flex-wrap: wrap; */
-    /* align-content: stretch; */
 
     width: 60vw;
     height: 60vw;
