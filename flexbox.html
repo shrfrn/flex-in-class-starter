@@ -31,7 +31,7 @@
             if(style.display !== 'flex'){
                 const elAxes = document.querySelectorAll('.axis')
                 elAxes.forEach(el => el.classList.add('hidden'))
-            } else if(style.flexDirection === 'column'){
+            } else if(style.flexDirection === 'column' || style.flexDirection === 'column-reverse'){
                 const elBody = document.querySelector('body')
                 elBody.classList.add('flex-column')
             }
