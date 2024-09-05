@@ -1,3 +1,7 @@
+.flex-container {
+    position: relative;
+}
+
 .flex-column {
     flex-direction: column;
 }
@@ -9,23 +13,28 @@
 .axis {
     position: absolute;
 }
+
 .axis::before {
     padding-inline-start: 1em;
     font-family: monospace;
     color: rgb(86, 86, 86);
 }
+
 .main-axis {
     height: 1px;
     width: 100%;
     border-block-start: 1px dashed rgba(0, 128, 0, 0.2);
     top: 50%;
 }
+
 .main-axis::before {
     content: 'main axis';
 }
+
 .flex-column .main-axis::before {
     content: 'cross axis';
 }
+
 .cross-axis {
     width: 1px;
     height: 100%;
@@ -33,9 +42,11 @@
     left: 50%;
     writing-mode: vertical-rl;
 }
+
 .flex-column .cross-axis::before {
     content: 'main axis';
 }
+
 .cross-axis::before {
     content: 'cross axis';
 }
