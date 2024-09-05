@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="css/axis.css">
     <link rel="stylesheet" href="css/flexbox.css">
+    
     <title>Flexbox</title>
 </head>
 
@@ -55,7 +57,7 @@
             var elWidths = document.querySelectorAll('.width')
 
             for(var i = 0; i < elWidths.length; i++){
-                elWidths[i].innerText = elWidths[i].parentElement.clientWidth + 'px'
+                elWidths[i].innerText = elWidths[i].parentElement.offsetWidth + 'px'
             }
         }
     </script>
