@@ -26,29 +26,31 @@
             <span>3</span>
             <span class="width"></span>
         </div>
-        
-        <div class="axis main-axis"></div>
-        <div class="axis cross-axis"></div>
-        
+
         <span class="width"></span>
     </div>
 
     <script>
         function setAxis(){
             const elFlexbox = document.querySelector('.flex-container')
-            style = getComputedStyle(elFlexbox)
+            const style = getComputedStyle(elFlexbox)
             
+            updateWidth()
+
             if(style.display !== 'flex'){
-                const elAxes = document.querySelectorAll('.axis')
-                elAxes.forEach(el => el.classList.add('hidden'))
-            } else if(style.flexDirection === 'column' || style.flexDirection === 'column-reverse'){
-                const elBody = document.querySelector('body')
-                elBody.classList.add('flex-column')
+                elFlexbox.classList.add('hidden')
+                return
+            } else {
+                elFlexbox.classList.remove('hidden')
             }
 
-            updateWidth()
+            if(style.flexDirection === 'column' || style.flexDirection === 'column-reverse'){
+                elFlexbox.classList.add('column')
+            } else {
+                elFlexbox.classList.remove('column')
+            }
         }
-        
+
         function updateWidth(){
             var elWidths = document.querySelectorAll('.width')
 
