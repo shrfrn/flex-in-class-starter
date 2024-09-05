@@ -9,18 +9,28 @@
     <title>Flexbox</title>
 </head>
 
-<body onload="setAxis()">
+<body onload="setAxis()" onresize="updateWidth()">
     
     <h1>flexbox</h1>
     <div class="flex-container">
 
-        <div class="flex-item item1">1</div>
-        <div class="flex-item item2">2</div>
-        <div class="flex-item item3">3</div>
+        <div class="flex-item item1">
+            <span>1</span>
+            <span class="width"></span>
+        </div>
+        <div class="flex-item item2">
+            <span>2</span>
+            <span class="width"></span>
+        </div>
+        <div class="flex-item item3">
+            <span>3</span>
+            <span class="width"></span>
+        </div>
         
         <div class="axis main-axis"></div>
         <div class="axis cross-axis"></div>
-
+        
+        <span class="width"></span>
     </div>
 
     <script>
@@ -34,6 +44,16 @@
             } else if(style.flexDirection === 'column' || style.flexDirection === 'column-reverse'){
                 const elBody = document.querySelector('body')
                 elBody.classList.add('flex-column')
+            }
+
+            updateWidth()
+        }
+        
+        function updateWidth(){
+            var elWidths = document.querySelectorAll('.width')
+
+            for(var i = 0; i < elWidths.length; i++){
+                elWidths[i].innerText = elWidths[i].parentElement.clientWidth + 'px'
             }
         }
     </script>
