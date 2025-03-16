@@ -1,0 +1,8 @@
+.reference {
+    display: flex;
+    align-items: center;
+}
+
+.reference a:is(:nth-child(2), :nth-child(4), :last-child) {
+    margin-inline-start: auto;
+}
